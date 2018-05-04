@@ -9,9 +9,9 @@
   "gxDependencies": [
     {
       "author": "hsanjuan",
-      "hash": "QmaG4DZ4JaqEfvPWt5nPPgoTzhc1tr1T3f4Nu9Jpdm8ymY",
+      "hash": "QmPwNSAKhfSDEjQ2LYx8bemvnoyXYTaL96JxsAvjzphT75",
       "name": "go-ipfs-blockstore",
-      "version": "0.0.2"
+      "version": "0.0.3"
     },
     {
       "author": "whyrusleeping",

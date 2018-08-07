@@ -9,9 +9,9 @@
   "gxDependencies": [
     {
       "author": "hsanjuan",
-      "hash": "QmcD7SqfyQyA91TZUQ7VPRYbGarxmY7EsQewVYMuN5LNSv",
+      "hash": "QmTCHqj6s51pDu1GaPGyBW2VdmCUvtzLCF6nWykfX9ZYRt",
       "name": "go-ipfs-blockstore",
-      "version": "0.0.12"
+      "version": "0.0.13"
     },
     {
       "author": "whyrusleeping",
@@ -43,6 +43,6 @@
   "license": "MIT",
   "name": "go-ipfs-exchange-offline",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "0.0.10"
+  "version": "0.0.11"
 }
 

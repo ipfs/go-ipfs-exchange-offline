@@ -43,6 +43,6 @@
   "license": "MIT",
   "name": "go-ipfs-exchange-offline",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "0.0.17"
+  "version": "0.1.0"
 }
 

@@ -10,4 +10,5 @@ require (
 	github.com/ipfs/go-ipfs-blocksutil v0.0.1
 	github.com/ipfs/go-ipfs-exchange-interface v0.1.0
 	github.com/ipfs/go-ipfs-util v0.0.2
+	github.com/ipfs/go-ipld-format v0.2.1-0.20220302134852-d02e0e18fc65
 )

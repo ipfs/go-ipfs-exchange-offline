@@ -24,21 +24,23 @@ func TestBlockReturnsErr(t *testing.T) {
 }
 
 func TestHasBlockReturnsNil(t *testing.T) {
+	ctx := context.Background()
 	store := bstore()
 	ex := Exchange(store)
 	block := blocks.NewBlock([]byte("data"))
 
-	err := ex.HasBlock(block)
+	err := ex.HasBlock(ctx, block)
 	if err != nil {
 		t.Fail()
 	}
 
-	if _, err := store.Get(block.Cid()); err != nil {
+	if _, err := store.Get(ctx, block.Cid()); err != nil {
 		t.Fatal(err)
 	}
 }
 
 func TestGetBlocks(t *testing.T) {
+	ctx := context.Background()
 	store := bstore()
 	ex := Exchange(store)
 	g := blocksutil.NewBlockGenerator()
@@ -46,7 +48,7 @@ func TestGetBlocks(t *testing.T) {
 	expected := g.Blocks(2)
 
 	for _, b := range expected {
-		if err := ex.HasBlock(b); err != nil {
+		if err := ex.HasBlock(ctx, b); err != nil {
 			t.Fail()
 		}
 	}

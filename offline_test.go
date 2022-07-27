@@ -4,7 +4,6 @@ import (
 	"context"
 	"testing"
 
-	blocks "github.com/ipfs/go-block-format"
 	cid "github.com/ipfs/go-cid"
 	ds "github.com/ipfs/go-datastore"
 	ds_sync "github.com/ipfs/go-datastore/sync"
@@ -23,21 +22,6 @@ func TestBlockReturnsErr(t *testing.T) {
 	t.Fail()
 }
 
-func TestHasBlockReturnsNil(t *testing.T) {
-	store := bstore()
-	ex := Exchange(store)
-	block := blocks.NewBlock([]byte("data"))
-
-	err := ex.HasBlock(context.Background(), block)
-	if err != nil {
-		t.Fail()
-	}
-
-	if _, err := store.Get(context.Background(), block.Cid()); err != nil {
-		t.Fatal(err)
-	}
-}
-
 func TestGetBlocks(t *testing.T) {
 	store := bstore()
 	ex := Exchange(store)
@@ -46,7 +30,10 @@ func TestGetBlocks(t *testing.T) {
 	expected := g.Blocks(2)
 
 	for _, b := range expected {
-		if err := ex.HasBlock(context.Background(), b); err != nil {
+		if err := store.Put(context.Background(), b); err != nil {
+			t.Fatal(err)
+		}
+		if err := ex.NotifyNewBlocks(context.Background(), b); err != nil {
 			t.Fail()
 		}
 	}

@@ -13,6 +13,7 @@ import (
 	ipld "github.com/ipfs/go-ipld-format"
 )
 
+// Deprecated: use github.com/ipfs/boxo/exchange/offline.Exchange
 func Exchange(bs blockstore.Blockstore) exchange.Interface {
 	return &offlineExchange{bs: bs}
 }

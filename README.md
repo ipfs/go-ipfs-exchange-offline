@@ -22,7 +22,6 @@ This is an offline exchange implementation which will not perform any request.
 
 - [Install](#install)
 - [Usage](#usage)
-- [Contribute](#contribute)
 - [License](#license)
 
 ## Install
@@ -40,12 +39,6 @@ import "github.com/ipfs/go-ipfs-exchange-offline"
 ```
 
 Check the [GoDoc documentation](https://godoc.org/github.com/ipfs/go-ipfs-exchange-offline)
-
-## Contribute
-
-PRs accepted.
-
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
